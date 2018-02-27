@@ -521,7 +521,7 @@ body {
     position: absolute;
     top: 5.4rem;
     left: 1.773rem;
-    overflow: scroll;
+    overflow: auto;
     font-size: 0.4rem;
     /* writing-mode: vertical-lr; */
     /* letter-spacing: 0.1rem; */

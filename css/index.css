@@ -147,10 +147,15 @@
 }
 .second .second-info ul li,
 .third .second-info ul li,
-.second .third-info ul li,
+.second .third-info ul li{
+  position: relative;
+  /* overflow: scroll; */
+  /* height: 8.08rem; */
+}
 .third .third-info ul li {
   position: relative;
-  overflow: hidden;
+  overflow: auto;
+  height: 8.08rem;
 }
 .second .second-info ul li span,
 .third .second-info ul li span,

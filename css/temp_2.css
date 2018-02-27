@@ -247,7 +247,7 @@ transform: translate(-50%,-50%);
 .third .third-info ul {
           position: absolute;
     height: 0;
-    width: 7.8rem;
+    width: 8.5rem;
     overflow: hidden;
     left: 50%;
     text-align-last: left;
@@ -273,7 +273,7 @@ transform: translate(-50%,-50%);
 .second .third-info ul li,
 .third .third-info ul li {
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .second .second-info ul li span,
 .third .second-info ul li span,
@@ -299,9 +299,9 @@ transform: translate(-50%,-50%);
 .info-intro,.info-scope{
         padding: 0 0.267rem;
     width: 100%;
-    height: 7.067rem;
-    overflow: hidden;
-    line-height: 0.567rem;
+    height:13.5rem;
+    overflow: auto;
+    line-height: 0.8rem;
     font-size: 0.513rem;
     text-indent: 1rem;
 }
@@ -400,7 +400,7 @@ transform: translate(-50%,-50%);
 /* 第三屏触发后效果 */
 .cur .third-info ul {
   transition: all 8s ease-out;
-  height: 7.33333333rem;
+    height: 15.333333rem;
 }
 .cur .second-info2 {
   transition: all 8s ease-out;

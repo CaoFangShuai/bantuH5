@@ -242,11 +242,14 @@ body {
 }
 .third .third-info ul {
   height: 0rem;
-  overflow: hidden;
+  overflow: auto;
   border: 1px solid rgba(0, 0, 0, 0);
+      width: 8.46rem;
 }
 .third .third-info li {
-  margin-top: 1em;
+  /* margin-top: 1em; */
+  height: 15rem;
+
 }
 /* 第三页效果 */
 .third.cur .third-bg1 {
@@ -264,7 +267,10 @@ body {
 }
 .third.cur .third-info ul {
   transition: all 4s 1s ease-in-out;
-  height: 5rem;
+  height: 15rem;
+}
+.info-intro{
+  font-size: 0.4rem
 }
 @keyframes third {
   0% {

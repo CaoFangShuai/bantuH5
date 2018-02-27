@@ -118,8 +118,10 @@
                         <li>经营范围：<span id="" class=""></span></li>
                     </ul> -->
                     <h2 class="third-title">公司简介：</h2>
-                    <p class="info-intro" id="intro" style="display: none;"></p>
-                    <p class="info-intro" id="intro_box"></p>
+                    <p class="info-intro" id="intro" style="display: none;">惨烈的战场，浴血的战袍，父亲伤痕累累的身影。“小殊，活下去，为了赤焰军，活下去”……梅长苏又一次从12年前梅岭血战的噩梦中惊醒，他抚摸着赤焰军手环上刻的“林”字，心绪难平，良久不语。大梁琅琊阁阁主蔺晨收到北燕全无背景、势力最弱的六皇子被册封为太子的消息。与此同时，正巡视江左的大梁誉王和京城中的太子同时获悉，六皇子之所以能脱颖而出，是因为他获得了琅琊阁锦囊中“麒麟才子，得之可得天下”的秘密梁帝年岁已高。太子与誉王已争夺皇位多年，双方势均力敌，相持不下。誉王巡视江左有功，梁帝欲加封其为七珠亲王，让太子忧心更甚；誉王又一次杀掉太子派来的刺客，深知与太子已势如水火，不进则死。
+                    惨烈的战场，浴血的战袍，父亲伤痕累累的身影。“小殊，活下去，为了赤焰军，活下去”……梅长苏又一次从12年前梅岭血战的噩梦中惊醒，他抚摸着赤焰军手环上刻的“林”字，心绪难平，良久不语。大梁琅琊阁阁主蔺晨收到北燕全无背景、势力最弱的六皇子被册封为太子的消息。与此同时，正巡视江左的大梁誉王和京城中的太子同时获悉，六皇子之所以能脱颖而出，是因为他获得了琅琊阁锦囊中“麒麟才子，得之可得天下”的秘密。梁帝年岁已高。太子与誉王高。太子与誉王已争夺皇位多年，双方势均力敌，相持不下。誉王巡视江左有功，梁帝欲加封其为七珠亲王，让太子忧心更甚</p>
+                    <p class="info-intro" id="intro_box">惨烈的战场，浴血的战袍，父亲伤痕累累的身影。“小殊，活下去，为了赤焰军，活下去”……梅长苏又一次从12年前梅岭血战的噩梦中惊醒，他抚摸着赤焰军手环上刻的“林”字，心绪难平，良久不语。大梁琅琊阁阁主蔺晨收到北燕全无背景、势力最弱的六皇子被册封为太子的消息。与此同时，正巡视江左的大梁誉王和京城中的太子同时获悉，六皇子之所以能脱颖而出，是因为他获得了琅琊阁锦囊中“麒麟才子，得之可得天下”的秘密梁帝年岁已高。太子与誉王已争夺皇位多年，双方势均力敌，相持不下。誉王巡视江左有功，梁帝欲加封其为七珠亲王，让太子忧心更甚；誉王又一次杀掉太子派来的刺客，深知与太子已势如水火，不进则死。
+                    惨烈的战场，浴血的战袍，父亲伤痕累累的身影。“小殊，活下去，为了赤焰军，活下去”……梅长苏又一次从12年前梅岭血战的噩梦中惊醒，他抚摸着赤焰军手环上刻的“林”字，心绪难平，良久不语。大梁琅琊阁阁主蔺晨收到北燕全无背景、势力最弱的六皇子被册封为太子的消息。与此同时，正巡视江左的大梁誉王和京城中的太子同时获悉，六皇子之所以能脱颖而出，是因为他获得了琅琊阁锦囊中“麒麟才子，得之可得天下”的秘密。梁帝年岁已高。太子与誉王高。太子与誉王已争夺皇位多年，双方势均力敌，相持不下。誉王巡视江左有功，梁帝欲加封其为七珠亲王，让太子忧心更甚</p>
                 </div>
             </div>
             <!-- fourth 第四屏 二维码展示 -->
@@ -146,6 +148,33 @@
     $('.wp-inner').fullpage({
         drag: false,
         beforeChange: function (e) {
+            function startmarquee(lh, speed, delay) {
+                var t;
+
+                var p = false;
+                var o = document.getElementById("intro_box");
+                var oHeight = o.offsetHeight;/** div的高度 **/
+                var preTop = 0;
+                o.scrollTop = 0;
+                function start() {
+                    t = setInterval(scrolling, speed);
+                    o.scrollTop += 1;
+                }
+                function scrolling() {
+                    if (o.scrollTop % lh != 0
+                        && o.scrollTop % (o.scrollHeight - oHeight - 1) != 0) {
+                        preTop = o.scrollTop;
+                        o.scrollTop += 1;
+                        if (preTop >= o.scrollHeight || preTop == o.scrollTop) {
+                            return false;
+                        }
+                    } else {
+                        clearInterval(t);
+                        setTimeout(start, delay);
+                    }
+                }
+                setTimeout(start, delay);
+            } 
             console.log(e.next);
             console.log(e.next == 2);
             var intro = document.getElementById('intro'),
@@ -171,6 +200,7 @@
                 console.log(e.next + "else");
                 console.log(timer);
                 clearInterval(timer)
+                startmarquee(20, 100, 0); 
             }
         },
     });
